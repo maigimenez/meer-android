@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+
+	<!-- HEADER -->
+	<include android:id="@+id/top_header"
+		android:layout_alignParentTop="true" layout="@layout/layout_header" />
+
+	<!-- FOOTER -->
+	<LinearLayout android:id="@+id/bottom_menu"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:layout_alignParentBottom="true">
+		<!-- menu bar -->
+		<include layout="@layout/layout_footer_menu" />
+	</LinearLayout>
+    
+
+  <!-- MAIN PART: split layout -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_below="@id/top_header" android:layout_above="@id/bottom_menu"
+        android:id="@+id/sub_content_view"
+        android:paddingBottom="5sp" android:background="@color/lightGrey"
+        android:baselineAligned="false">
+		
+		<!-- Left layout -->
+		<RelativeLayout android:id="@+id/left_layout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:layout_weight="1" android:background="#eeeeee"
+			android:layout_margin="20dp" android:paddingBottom="20dp"
+			android:paddingTop="25dp" android:paddingLeft="25dp"
+			android:paddingRight="25dp">
+
+			<!-- Report Summary Label -->
+			<TextView android:id="@+id/reportSum_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/rd_title" android:textAppearance="@android:style/TextAppearance.Large"
+				android:layout_marginBottom="20dp"/>
+
+			<!-- Report Date -->
+			<TextView android:id="@+id/reportDate_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/reportSum_label" android:text="@string/rd_date"
+				android:layout_marginLeft="20dp" />
+
+			<Button android:id="@+id/pickDate_button"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/change" android:layout_below="@id/reportSum_label"
+				android:layout_alignParentRight="true" android:layout_alignBaseline="@+id/reportDate" />
+
+			<EditText android:id="@id/reportDate" android:layout_width="match_parent"
+				android:layout_height="wrap_content" android:layout_below="@id/reportDate_label"
+				android:layout_toLeftOf="@id/pickDate_button" android:hint="@string/rd_date_hint"
+				android:text="@string/d_rd_date" android:layout_marginBottom="10dp"
+				android:layout_marginLeft="20dp" android:inputType="date" />
+
+
+			<!-- Report ID -->
+			<TextView android:id="@+id/reportID_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_below="@id/reportDate" android:text="@string/rd_code"
+				android:layout_marginLeft="20dp" />
+
+			<EditText android:id="@+id/reportID" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_below="@id/reportID_label"
+				android:hint="@string/rd_code_hint" android:text="@string/d_rd_id"
+				android:layout_marginBottom="10dp" android:layout_marginLeft="20dp" />
+
+			<!-- Study ID -->
+			<TextView android:id="@+id/studyID_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/rd_studyID" android:layout_below="@id/reportID"
+				android:layout_marginLeft="20dp" />
+
+			<EditText android:id="@+id/studyID" android:layout_width="fill_parent"
+				android:layout_height="wrap_content" android:layout_below="@id/studyID_label"
+				android:text="@string/d_rd_code" android:hint="@string/rd_studyID_hint"
+				android:layout_marginLeft="20dp" />
+
+
+		</RelativeLayout>
+
+		<!-- Right layout -->
+		<RelativeLayout android:id="@+id/right_layout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:layout_weight="1" android:background="#eeeeee"
+			android:layout_margin="20dp" android:paddingBottom="20dp"
+			android:paddingTop="25dp" android:paddingLeft="25dp"
+			android:paddingRight="25dp">
+			
+			
+			<TextView android:id="@+id/injuriesSum_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/in_title" android:textAppearance="@android:style/TextAppearance.Large"
+				android:layout_marginBottom="20dp"
+				android:textColor="@color/black"/>	
+			
+			<LinearLayout android:id="@+id/injuriesButtons_layout"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+			    android:layout_alignParentBottom="true"
+			    android:layout_alignRight="@+id/injuries_list"
+				android:gravity="right|bottom">
+				
+				<Button android:id="@+id/addInjuries_button" 
+				    android:layout_width="wrap_content"				  
+					android:layout_height="wrap_content" android:text="@string/add" />
+			</LinearLayout>
+			
+						
+			<ListView
+			    android:id="@+id/injuries_list"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_above="@id/injuriesButtons_layout"
+			    android:layout_below="@id/injuriesSum_label" >
+
+			</ListView>
+			
+
+
+
+		</RelativeLayout>
+        
+ 
+    </LinearLayout>
+    
+    </RelativeLayout>

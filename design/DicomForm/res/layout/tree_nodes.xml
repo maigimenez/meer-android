@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+ 
+    <!-- HEADER -->
+    <include android:id="@+id/top_header"
+        android:layout_alignParentTop="true" layout="@layout/layout_header" />
+    
+    <!-- FOOTER -->
+    <LinearLayout android:id="@+id/bottom_menu"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"         
+        android:orientation="horizontal" android:layout_alignParentBottom="true">
+        <!-- menu bar -->
+        <include layout="@layout/layout_footer_menu" />
+    </LinearLayout>
+    
+
+  <!-- MAIN PART: split layout -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_below="@id/top_header" android:layout_above="@id/bottom_menu"
+        android:id="@+id/sub_content_view"
+        android:paddingBottom="5sp" android:background="@color/lightGrey"
+        android:baselineAligned="false">
+		
+		<!-- Left layout -->
+		<RelativeLayout android:id="@+id/left_layout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:layout_weight="1" android:background="#eeeeee"
+			android:layout_margin="20dp" android:paddingBottom="20dp"
+			android:paddingTop="25dp" android:paddingLeft="25dp"
+			android:paddingRight="25dp">
+
+			
+			<TextView android:id="@+id/leftBreast_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/leftBreast" android:textAppearance="@android:style/TextAppearance.Large"
+				android:layout_marginBottom="20dp"
+				android:textColor="@color/black"/>	
+			
+
+			<ExpandableListView
+			    android:id="@+id/leftBreast_list"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_below="@+id/leftBreast_label" >
+			</ExpandableListView>
+
+		</RelativeLayout>
+
+		<!-- Right layout -->
+		<RelativeLayout android:id="@+id/right_layout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:layout_weight="1" android:background="#eeeeee"
+			android:layout_margin="20dp" android:paddingBottom="20dp"
+			android:paddingTop="25dp" android:paddingLeft="25dp"
+			android:paddingRight="25dp">
+			
+			
+			<TextView android:id="@+id/rightBreast_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/rightBreast" android:textAppearance="@android:style/TextAppearance.Large"
+				android:layout_marginBottom="20dp"
+				android:textColor="@color/black"/>	
+			
+
+			<ExpandableListView
+			    android:id="@+id/rightBreast_list"
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_centerVertical="true"
+			    android:layout_below="@id/rightBreast_label" >
+			</ExpandableListView>
+
+		</RelativeLayout>
+        
+ 
+    </LinearLayout>
+    
+    </RelativeLayout>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" android:layout_height="match_parent">
+
+	<!-- HEADER -->
+	<include android:id="@+id/top_header"
+		android:layout_alignParentTop="true" layout="@layout/layout_header" />
+
+	<!-- FOOTER -->
+	<LinearLayout android:id="@+id/bottom_menu"
+		android:layout_width="fill_parent" android:layout_height="wrap_content"
+		android:orientation="horizontal" android:layout_alignParentBottom="true">
+		<!-- menu bar -->
+		<include layout="@layout/layout_footer_menu" />
+	</LinearLayout>
+
+
+	<!-- MAIN PART: split layout -->
+	<LinearLayout android:orientation="horizontal"
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_below="@id/top_header" android:layout_above="@id/bottom_menu"
+		android:id="@+id/sub_content_view" android:paddingBottom="5sp"
+		android:background="@color/lightGrey" android:baselineAligned="false">
+
+		<!-- Left layout -->
+		<RelativeLayout android:id="@+id/left_layout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:layout_margin="10dp" android:layout_weight="1"
+			android:paddingBottom="20dp" android:paddingLeft="20dp"
+			android:paddingTop="10dp">
+
+			<TextView android:id="@+id/addInjury_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_marginBottom="20dp" android:text="Añadir masa"
+				android:textColor="@color/dirtyWhite" android:textSize="24dp"
+				android:textStyle="bold" />
+			<ScrollView android:id="@+id/scrollView1"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:layout_alignLeft="@+id/reportDates_title"
+				android:layout_alignParentTop="true">
+				<LinearLayout android:id="@+id/info_layout"
+					android:layout_width="match_parent" android:layout_height="wrap_content"
+					android:background="@color/dirtyWhite" android:layout_marginTop="60dp"
+					android:paddingBottom="20dp" android:paddingTop="25dp"
+					android:paddingLeft="25dp" android:paddingRight="25dp"
+					android:orientation="vertical">
+
+					<!-- Report Date -->
+					<RelativeLayout android:id="@+id/reportDates_layout"
+						android:layout_width="match_parent" android:layout_height="wrap_content"
+						android:background="#ffffff" android:padding="15dp"
+						android:layout_marginBottom="20dp">
+
+						<TextView android:id="@+id/reportDates_title"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="Fechas" android:textAppearance="@android:style/TextAppearance.Medium"
+							android:layout_marginBottom="20dp" />
+
+						<TextView android:id="@+id/reportDate_label"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_below="@id/reportDates_title" android:text="@string/rd_date"
+							android:layout_marginLeft="20dp" />
+
+						<Button android:id="@+id/pickDate_button"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="@string/change" android:layout_below="@id/reportDates_title"
+							android:layout_alignParentRight="true"
+							android:layout_alignBaseline="@+id/reportDate" />
+
+						<EditText android:id="@id/reportDate"
+							android:layout_width="match_parent" android:layout_height="wrap_content"
+							android:layout_below="@id/reportDate_label"
+							android:layout_toLeftOf="@id/pickDate_button" android:hint="@string/rd_date_hint"
+							android:text="@string/d_rd_date" android:layout_marginLeft="20dp"
+							android:layout_marginBottom="20dp" />
+
+						<CheckBox android:id="@+id/prevDate_checkbox"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_alignLeft="@id/reportDate" android:text="Presente en estudios previos."
+							android:layout_below="@id/reportDate" />
+
+						<TextView android:id="@+id/prevReportDate_label"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_below="@id/prevDate_checkbox" android:text="Fecha del informe previo:"
+							android:layout_marginLeft="60dp" />
+
+
+						<EditText android:id="@+id/prevReportDate"
+							android:layout_width="match_parent" android:layout_height="wrap_content"
+							android:layout_below="@id/prevReportDate_label"
+							android:layout_toLeftOf="@id/pickDate_button" android:hint="@string/rd_date_hint"
+							android:text="@string/d_rd_date" android:layout_alignLeft="@id/prevReportDate_label" />
+
+						<Button android:id="@+id/prevPickDate_button"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_alignBottom="@id/prevReportDate"
+							android:layout_toRightOf="@id/prevReportDate" android:text="@string/change" />
+
+					</RelativeLayout>
+
+					<!-- Morphology -->
+					<RelativeLayout android:id="@+id/morphology_layout"
+						android:layout_width="match_parent" android:layout_height="wrap_content"
+						android:background="#ffffff" android:padding="15dp"
+						android:layout_marginBottom="20dp">
+
+						<TextView android:id="@+id/morphology_title"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="Morfología" android:textAppearance="@android:style/TextAppearance.Medium"
+							android:layout_marginBottom="20dp" />
+
+						<TextView android:id="@+id/morphology_label"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_below="@id/morphology_title" android:text="Forma o morfología:"
+							android:layout_marginLeft="20dp" />
+
+						<Spinner android:id="@+id/morphology_spinner"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_alignLeft="@id/morphology_label"
+							android:layout_below="@id/morphology_label"
+							android:layout_marginBottom="20dp" />
+
+						<TextView android:id="@+id/margin_label"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_below="@id/morphology_spinner" android:text="Borde o márgenes:"
+							android:layout_marginLeft="20dp" />
+
+						<Spinner android:id="@+id/margin_spinner"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_alignLeft="@id/morphology_label"
+							android:layout_below="@id/margin_label"
+							android:layout_marginBottom="20dp" />
+
+					</RelativeLayout>
+
+
+					<!-- Calcifications -->
+					<RelativeLayout android:id="@+id/calc_layout"
+						android:layout_width="match_parent" android:layout_height="wrap_content"
+						android:background="#ffffff" android:padding="15dp"
+						android:layout_marginBottom="20dp">
+
+						<TextView android:id="@+id/calc_title"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:text="Calcificaciones" android:textAppearance="@android:style/TextAppearance.Medium"
+							android:layout_marginBottom="20dp"  android:layout_marginLeft="20dp"/>
+						
+						<CheckBox android:id="@+id/calc_checkbox"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_alignLeft="@id/calc_title" android:text="Existen calcificaciones."
+							android:layout_below="@id/reportDate" />
+
+						<TextView android:id="@+id/calc_shape_label"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_below="@id/calc_checkbox" android:text="Forma:"
+							android:layout_marginLeft="60dp" />
+						
+						<Spinner android:id="@+id/calc_shape_spinner"
+							android:layout_width="wrap_content" android:layout_height="wrap_content"
+							android:layout_alignLeft="@id/calc_shape_label"
+							android:layout_below="@id/calc_shape_label"
+							android:layout_marginBottom="20dp" />
+					</RelativeLayout>
+
+				</LinearLayout>
+			</ScrollView>
+
+		</RelativeLayout>
+
+		<!-- Right layout -->
+		<RelativeLayout android:id="@+id/right_layout"
+			android:layout_width="match_parent" android:layout_height="wrap_content"
+			android:layout_weight="1" android:background="#eeeeee"
+			android:layout_margin="20dp" android:paddingBottom="20dp"
+			android:paddingTop="25dp" android:paddingLeft="25dp"
+			android:paddingRight="25dp">
+
+
+			<TextView android:id="@+id/injuriesSum_label"
+				android:layout_width="wrap_content" android:layout_height="wrap_content"
+				android:text="@string/in_title" android:textAppearance="@android:style/TextAppearance.Large"
+				android:layout_marginBottom="20dp" android:textColor="@color/black" />
+
+			<LinearLayout android:id="@+id/injuriesButtons_layout"
+				android:layout_height="wrap_content" android:layout_width="wrap_content"
+				android:layout_alignParentBottom="true" android:layout_alignRight="@+id/injuries_list"
+				android:gravity="right|bottom">
+
+				<Button android:layout_width="wrap_content"
+					android:layout_height="wrap_content" android:text="@string/add" />
+			</LinearLayout>
+
+
+			<ListView android:id="@+id/injuries_list"
+				android:layout_width="match_parent" android:layout_height="wrap_content"
+				android:layout_above="@id/injuriesButtons_layout"
+				android:layout_below="@id/injuriesSum_label">
+
+			</ListView>
+
+
+
+
+		</RelativeLayout>
+
+
+	</LinearLayout>
+
+</RelativeLayout>
