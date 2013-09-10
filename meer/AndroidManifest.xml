@@ -1,0 +1,91 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.i3m.meer"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="15" />
+    
+    <supports-screens 
+        android:largeScreens="true" 
+        android:xlargeScreens="true"
+        android:smallScreens="false"/>
+
+    <application
+        android:label="meer"
+        android:icon="@drawable/mano"
+        android:theme="@style/dicomTheme" >
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29897_radlex_rid34261"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29896_radlex_rid34265"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29897_radlex_rid5196"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29897_radlex_rid3874"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29896_radlex_rid34261"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29896_radlex_rid5196"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29897_trencadis_mamo_trmm0011"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29896_radlex_rid3874"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Summary_radlex_rid10357"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+             <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Tree_radlex_rid10357_radlex_rid29897"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29896_trencadis_mamo_trmm0011"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Tree_radlex_rid10357_radlex_rid29896"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        <activity
+            android:name="com.i3m.meer.Edit_radlex_rid29897_radlex_rid34265"
+            android:label="summary"
+            android:windowSoftInputMode="adjustPan">
+        </activity>
+        
+    </application>
+
+</manifest>

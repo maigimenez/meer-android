@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dirtyWhite">#F6F8F8</color>
+    <color name="turquoise">#50BAB5</color>
+    <color name="babyBlue">#A2D2D5</color>
+    <color name="orange">#EB6E51</color>
+    <color name="dust">#DDC0B2</color>
+    <color name="darkGrey">#686868</color>
+    <color name="lightGrey">#A7A7A8</color> 
+    <color name="black">#000000</color>
+    <color name="link_text_holo_light">#33B5E5</color>
+ </resources>

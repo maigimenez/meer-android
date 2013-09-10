@@ -7,7 +7,7 @@
 
 	<!-- Patient name -->
 	<TextView android:id="@+id/patientName" android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="@string/d_p_name"
+		android:layout_height="wrap_content" android:text="name SURNAME"
 		android:textColor="@color/black" android:textSize="20dp" />
 
 	<!-- Patient ID -->

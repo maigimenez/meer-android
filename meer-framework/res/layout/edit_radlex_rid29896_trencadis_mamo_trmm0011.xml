@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <!-- HEADER -->
+    <include android:id="@+id/top_header"
+        android:layout_alignParentTop="true" layout="@layout/layout_header" />
+
+    <!-- FOOTER -->
+    <LinearLayout android:id="@+id/bottom_menu"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_alignParentBottom="true">
+        <!-- menu bar -->
+        <include layout="@layout/layout_footer_menu" />
+    </LinearLayout>
+
+    <!-- MAIN PART: split layout -->
+    <LinearLayout android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="fill_parent"
+        android:layout_below="@id/top_header" android:layout_above="@id/bottom_menu"
+        android:id="@+id/sub_content_view"
+        android:paddingBottom="5sp" android:background="@color/lightGrey"
+        android:baselineAligned="false"> 
+
+        <!-- Left layout -->
+        <RelativeLayout android:id="@+id/left_layout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_weight="1" android:background="#eeeeee"
+            android:layout_margin="20dp" android:paddingBottom="20dp"
+            android:paddingTop="25dp" android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+                <TextView android:id="@+id/code_TRMM0011"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/code_TRMM0011"				
+                    android:textAppearance="@android:style/TextAppearance.Large" />
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@id/code_TRMM0011">
+                    <RelativeLayout 
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        
+                        <!-- Bool: Adenopatías Axilares -->			
+                        <CheckBox android:id="@+id/cbox_RID34272"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34272"/>
+                        
+                        <!-- Bool: Adenopatías en Cadena Mamaria Interna -->			
+                        <CheckBox android:id="@+id/cbox_RADLEX"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RADLEX"
+                            android:layout_alignLeft="@id/cbox_RID34272" 
+                            android:layout_below="@id/cbox_RID34272"/>
+                        
+                        <!-- Bool: Adenopatías Intramamarias -->			
+                        <CheckBox android:id="@+id/cbox_RID34263"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34263"
+                            android:layout_alignLeft="@id/cbox_RADLEX" 
+                            android:layout_below="@id/cbox_RADLEX"/>
+                        
+                        <!-- Bool: Cuerpo Extraño -->			
+                        <CheckBox android:id="@+id/cbox_RID5425"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID5425"
+                            android:layout_alignLeft="@id/cbox_RID34263" 
+                            android:layout_below="@id/cbox_RID34263"/>
+                        
+                        <!-- Bool: Edema en Piel -->			
+                        <CheckBox android:id="@+id/cbox_RID34270"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34270"
+                            android:layout_alignLeft="@id/cbox_RID5425" 
+                            android:layout_below="@id/cbox_RID5425"/>
+                        
+                        <!-- Bool: Edema Mamario -->			
+                        <CheckBox android:id="@+id/cbox_RID34271"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34271"
+                            android:layout_alignLeft="@id/cbox_RID34270" 
+                            android:layout_below="@id/cbox_RID34270"/>
+                        </RelativeLayout>
+                </ScrollView>
+        </RelativeLayout>
+
+        <!-- Right layout -->
+        <RelativeLayout android:id="@+id/right_layout"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_weight="1" android:background="#eeeeee"
+            android:layout_margin="20dp" android:paddingBottom="20dp"
+            android:paddingTop="25dp" android:paddingLeft="25dp"
+            android:paddingRight="25dp">   
+                <ScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@id/right_layout">
+                    <RelativeLayout 
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        
+                        <!-- Bool: Engrosamiento de Piel -->			
+                        <CheckBox android:id="@+id/cbox_TRMM0016"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_TRMM0016"/>
+                        
+                        <!-- Bool: Invasión de Piel -->			
+                        <CheckBox android:id="@+id/cbox_RID34318"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34318"
+                            android:layout_alignLeft="@id/cbox_TRMM0016" 
+                            android:layout_below="@id/cbox_TRMM0016"/>
+                        
+                        <!-- Bool: Invasión de Pared Torácica -->			
+                        <CheckBox android:id="@+id/cbox_RID34320"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34320"
+                            android:layout_alignLeft="@id/cbox_RID34318" 
+                            android:layout_below="@id/cbox_RID34318"/>
+                        
+                        <!-- Bool: Invasión Pectoral -->			
+                        <CheckBox android:id="@+id/cbox_RID34319"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34319"
+                            android:layout_alignLeft="@id/cbox_RID34320" 
+                            android:layout_below="@id/cbox_RID34320"/>
+                        
+                        <!-- Bool: Prótesis -->			
+                        <CheckBox android:id="@+id/cbox_RID28823"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID28823"
+                            android:layout_alignLeft="@id/cbox_RID34319" 
+                            android:layout_below="@id/cbox_RID34319"/>
+                        
+                        <!-- Bool: Retracción de Piel -->			
+                        <CheckBox android:id="@+id/cbox_RID34383"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34383"
+                            android:layout_alignLeft="@id/cbox_RID28823" 
+                            android:layout_below="@id/cbox_RID28823"/>
+                        
+                        <!-- Bool: Retracción o Inversión del Pezón -->			
+                        <CheckBox android:id="@+id/cbox_RID34269"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="@string/code_RID34269"
+                            android:layout_alignLeft="@id/cbox_RID34383" 
+                            android:layout_below="@id/cbox_RID34383"/>
+                        </RelativeLayout>
+                </ScrollView>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>
